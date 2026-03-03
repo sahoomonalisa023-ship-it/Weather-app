@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="weather-card">
+            <header>
+                <h1>Weather Report</h1>
+            </header>
+
+            <div class="search-section">
+                <div class="input-group">
+                    <input type="text" id="city-input" placeholder="Enter city name..." autocomplete="off">
+                </div>
+                
+                <div class="controls-row">
+                    <select id="type-select">
+                        <option value="current">Current Weather</option>
+                        <option value="forecast">7-Day Forecast</option>
+                        <option value="historical">Historical Weather</option>
+                    </select>
+                    
+                    <input type="date" id="date-input" class="hidden">
+                    
+                    <button id="search-btn">
+                        <i class="fa-solid fa-magnifying-glass"></i> Search
+                    </button>
+                </div>
+            </div>
+
+            <div id="loading-spinner" class="hidden">
+                <div class="spinner"></div>
+            </div>
+
+            <div id="error-message" class="hidden"></div>
+
+            <div id="weather-result" class="hidden">
+                <!-- Content injected by JS -->
+                <div class="result-header">
+                    <h2 id="result-city">City, Country</h2>
+                    <p id="result-date">Local Time</p>
+                </div>
+                
+                <div class="current-weather">
+                    <img id="weather-icon" src="" alt="Weather Icon">
+                    <div class="temp-container">
+                        <span id="result-temp">0°</span>
+                        <p id="result-desc">Clear Sky</p>
+                    </div>
+                </div>
+
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <i class="fa-solid fa-droplet"></i>
+                        <span>Humidity</span>
+                        <strong id="detail-humidity">0%</strong>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fa-solid fa-wind"></i>
+                        <span>Wind</span>
+                        <strong id="detail-wind">0 km/h</strong>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <span>Pressure</span>
+                        <strong id="detail-pressure">0 mb</strong>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Forecast Container (Hidden by default) -->
+            <div id="forecast-result" class="hidden">
+                <!-- Forecast items injected here -->
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
